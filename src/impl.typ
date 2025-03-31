@@ -39,11 +39,15 @@
   set text(10pt)
   set par(justify: true)
 
-  [
-    #heading(outlined: false, bookmarked: false)[Abstract]
-    #text(font: "TeX Gyre Pagella", abstract)
-    #v(3pt)
-    *Keywords:* #keywords.join(text(font: "TeX Gyre Pagella", "; "))
+  if abstract != none and abstract != [] {
+    [
+      #heading(outlined: false, bookmarked: false)[Abstract]
+      #text(font: "TeX Gyre Pagella", abstract)
+      #v(3pt)
+    ]
+  }
+  if keywords.len() > 0 [
+     *Keywords:* #keywords.join(text(font: "TeX Gyre Pagella", "; "))
   ]
   v(18pt)
 }
